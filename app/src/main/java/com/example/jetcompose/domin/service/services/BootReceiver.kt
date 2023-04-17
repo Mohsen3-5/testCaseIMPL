@@ -1,14 +1,12 @@
-package com.example.jetcompose.domin.service
+package com.example.jetcompose.domin.service.services
 
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.os.Build
-import android.util.Log
 import androidx.annotation.RequiresApi
-import androidx.core.content.ContextCompat
-import com.example.jetcompose.MainActivity
-import com.example.jetcompose.data.SharedPreferences
+import com.example.jetcompose.presentation.homePage.MainActivity
+import com.example.jetcompose.data.repo.SharedPreferences
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 

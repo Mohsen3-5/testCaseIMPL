@@ -2,9 +2,9 @@ package com.example.jetcompose.di
 
 import android.content.Context
 import android.view.WindowManager
-import com.example.jetcompose.data.SharedPreferences
-import com.example.jetcompose.domin.service.OverlayService
-import com.example.jetcompose.domin.service.OverlayServiceImpl
+import com.example.jetcompose.data.repo.SharedPreferences
+import com.example.jetcompose.domin.service.services.OverlayService
+import com.example.jetcompose.domin.service.services.OverlayServiceImpl
 import com.example.jetcompose.domin.service.repo.SharedPreferencesINF
 import dagger.Module
 import dagger.Provides

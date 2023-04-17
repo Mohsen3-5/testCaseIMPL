@@ -1,4 +1,4 @@
-package com.example.jetcompose.data
+package com.example.jetcompose.data.repo
 
 import android.content.Context
 import com.example.jetcompose.domin.service.repo.SharedPreferencesINF

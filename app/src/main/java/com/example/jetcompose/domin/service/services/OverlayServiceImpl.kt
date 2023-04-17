@@ -1,4 +1,4 @@
-package com.example.jetcompose.domin.service
+package com.example.jetcompose.domin.service.services
 
 import android.app.*
 import android.content.Context
@@ -13,7 +13,7 @@ import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import com.example.jetcompose.R
-import com.example.jetcompose.data.SharedPreferences
+import com.example.jetcompose.data.repo.SharedPreferences
 import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
@@ -25,7 +25,7 @@ import javax.inject.Inject
 
 @AndroidEntryPoint
 class OverlayServiceImpl @Inject constructor(
-) :OverlayService,Service(){
+) : OverlayService,Service(){
 
     @Inject
     lateinit var windowManager: WindowManager

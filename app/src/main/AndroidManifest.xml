@@ -18,7 +18,7 @@
         android:theme="@style/Theme.JetCompose"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.homePage.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.JetCompose">
@@ -33,10 +33,10 @@
                 android:value="" />
         </activity>
         <service
-            android:name=".domin.service.OverlayServiceImpl">
+            android:name=".domin.service.services.OverlayServiceImpl">
         </service>
         <receiver
-            android:name=".domin.service.BootReceiver"
+            android:name=".domin.service.services.BootReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>

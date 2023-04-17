@@ -1,4 +1,4 @@
-package com.example.jetcompose.presentation.theme.homePage
+package com.example.jetcompose.presentation.homePage
 
 import android.app.AlertDialog
 import android.content.Context
@@ -11,8 +11,8 @@ import androidx.annotation.RequiresApi
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
-import com.example.jetcompose.domin.service.OverlayService
-import com.example.jetcompose.domin.service.OverlayServiceImpl
+import com.example.jetcompose.domin.service.services.OverlayService
+import com.example.jetcompose.domin.service.services.OverlayServiceImpl
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

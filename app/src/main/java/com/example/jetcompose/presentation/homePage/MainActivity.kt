@@ -1,4 +1,4 @@
-package com.example.jetcompose
+package com.example.jetcompose.presentation.homePage
 
 import android.content.Context
 import android.os.Build
@@ -8,9 +8,9 @@ import android.widget.Button
 import androidx.activity.ComponentActivity
 import androidx.activity.viewModels
 import androidx.annotation.RequiresApi
-import com.example.jetcompose.data.SharedPreferences
-import com.example.jetcompose.domin.service.OverlayServiceImpl
-import com.example.jetcompose.presentation.theme.homePage.HomePageViewModel
+import com.example.jetcompose.R
+import com.example.jetcompose.data.repo.SharedPreferences
+import com.example.jetcompose.domin.service.services.OverlayServiceImpl
 import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
