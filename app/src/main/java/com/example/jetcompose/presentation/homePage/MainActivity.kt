@@ -1,9 +1,9 @@
 package com.example.jetcompose.presentation.homePage
 
+import android.Manifest
 import android.content.Context
 import android.os.Build
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import androidx.activity.ComponentActivity
 import androidx.activity.viewModels
@@ -26,7 +26,10 @@ class MainActivity
      lateinit var overlayServiceImpl: OverlayServiceImpl
      @Inject
      lateinit var sharedPreferences: SharedPreferences
-
+    val permissions = listOf(
+        Manifest.permission.PACKAGE_USAGE_STATS,
+        Manifest.permission.SYSTEM_ALERT_WINDOW
+    )
     private val viewModel by viewModels<HomePageViewModel>()
 
     @Inject
@@ -36,8 +39,10 @@ class MainActivity
     // This button is used to start or stop the overlay service.
     private lateinit var controllerBtn : Button
 
+    @RequiresApi(Build.VERSION_CODES.Q)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.home_page)
         // If the overlay service is running, start it.
         if(sharedPreferences.getServiceStatus()){
@@ -48,20 +53,18 @@ class MainActivity
         controllerBtn.text=if(sharedPreferences.getServiceStatus())"STOP" else "START"
 
         // When the button is clicked, it starts or stops the overlay service and updates the button text accordingly.
-        controllerBtn.setOnClickListener(
-                View.OnClickListener {
-                run {
-                    println(sharedPreferences.getServiceStatus())
-                    if (sharedPreferences.getServiceStatus()){
-                        viewModel.stopService(context)
-                        controllerBtn.text="START"
-                    }else{
-                        viewModel.askPermissionAndGo(context,android.Manifest.permission.SYSTEM_ALERT_WINDOW,this)
-                        controllerBtn.text="STOP"
-                    }
-                    }
+        controllerBtn.setOnClickListener {
+            run {
+                println(sharedPreferences.getServiceStatus())
+                if (sharedPreferences.getServiceStatus()) {
+                    viewModel.stopService(context)
+                    controllerBtn.text = "START"
+                } else {
+                    viewModel.askPermissionAndGo(context, this)
+                    controllerBtn.text = "STOP"
                 }
-            )
+            }
+        }
 
     }
 
